@@ -1,0 +1,281 @@
+/* STYLE.CSS */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: black;
+  color: white;
+  overflow-x: hidden;
+}
+
+.stars {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(30,30,60,0.4), black);
+  z-index: -1;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 40px 20px;
+}
+
+.hero {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.intro {
+  color: #facc15;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+.hero h1 {
+  font-size: 70px;
+  color: #fde047;
+  text-shadow: 0 0 20px gold;
+}
+
+.subtitle {
+  color: #d4d4d8;
+  max-width: 700px;
+  margin: auto;
+  font-size: 18px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  margin-bottom: 100px;
+}
+
+.card {
+  background: rgba(24, 24, 27, 0.8);
+  border: 1px solid rgba(250, 204, 21, 0.2);
+  padding: 30px;
+  border-radius: 30px;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  border-color: #fde047;
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+}
+
+.card h3 {
+  color: #fde047;
+}
+
+.gallery h2,
+.ending h2 {
+  text-align: center;
+  color: #fde047;
+  font-size: 40px;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  margin-top: 40px;
+}
+
+.photo-card {
+  background: #18181b;
+  border-radius: 25px;
+  overflow: hidden;
+  border: 1px solid rgba(250, 204, 21, 0.2);
+}
+
+.photo-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.photo-card p {
+  padding: 15px;
+  color: #d4d4d8;
+}
+
+.ending {
+  text-align: center;
+  margin-top: 100px;
+  padding: 60px 20px;
+  border: 1px solid rgba(250, 204, 21, 0.2);
+  border-radius: 40px;
+}
+
+button {
+  background: #fde047;
+  color: black;
+  border: none;
+  padding: 18px 30px;
+  border-radius: 999px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: scale(1.05);
+}efault function StarWarsLoveSite() {
+  const reasons = [
+    {
+      title: "You Make Me Feel Safe",
+      text: "Like finally finding the right side of the Force after wandering the galaxy.",
+      emoji: "✨",
+    },
+    {
+      title: "You Always Make Me Laugh",
+      text: "Even on hard days, you somehow pull me out of my head and make everything lighter.",
+      emoji: "🚀",
+    },
+    {
+      title: "You Understand Me",
+      text: "You’ve seen every version of me and still choose to stay beside me.",
+      emoji: "🌌",
+    },
+    {
+      title: "You’re My Favorite Adventure",
+      text: "Every day with you feels like exploring a new planet together.",
+      emoji: "🪐",
+    },
+    {
+      title: "You Love Me Gently",
+      text: "You handle my heart with patience, softness, and care.",
+      emoji: "💫",
+    },
+    {
+      title: "You’re My Home",
+      text: "No matter where we are, being with you feels like home.",
+      emoji: "⭐",
+    },
+  ];
+
+  return (
+    <div className="min-h-screen bg-black text-white overflow-hidden relative font-sans">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(30,30,60,0.4),black)]" />
+
+      <div className="absolute inset-0 overflow-hidden">
+        {[...Array(80)].map((_, i) => (
+          <div
+            key={i}
+            className="absolute bg-white rounded-full animate-pulse"
+            style={{
+              width: `${Math.random() * 3 + 1}px`,
+              height: `${Math.random() * 3 + 1}px`,
+              top: `${Math.random() * 100}%`,
+              left: `${Math.random() * 100}%`,
+              opacity: Math.random(),
+            }}
+          />
+        ))}
+      </div>
+
+      <div className="relative z-10 max-w-6xl mx-auto px-6 py-20">
+        <div className="text-center mb-20">
+          <p className="uppercase tracking-[0.5em] text-yellow-400 text-sm mb-4">
+            a long time ago in a galaxy far, far away...
+          </p>
+
+          <h1 className="text-5xl md:text-7xl font-black text-yellow-300 drop-shadow-[0_0_25px_rgba(255,215,0,0.8)] mb-6">
+            Reasons I Love You
+          </h1>
+
+          <p className="text-zinc-300 max-w-2xl mx-auto text-lg leading-relaxed">
+            This transmission was created for the best boyfriend in the galaxy.
+            Every card below contains a reason why you mean so much to me.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-24">
+          {reasons.map((reason, index) => (
+            <div
+              key={index}
+              className="group bg-zinc-900/70 border border-yellow-400/20 rounded-3xl p-8 backdrop-blur-md hover:border-yellow-300 hover:-translate-y-2 transition-all duration-300 hover:shadow-[0_0_30px_rgba(255,215,0,0.2)]"
+            >
+              <div className="text-5xl mb-6 group-hover:scale-110 transition-transform duration-300">
+                {reason.emoji}
+              </div>
+
+              <h2 className="text-2xl font-bold text-yellow-300 mb-4">
+                {reason.title}
+              </h2>
+
+              <p className="text-zinc-300 leading-relaxed">{reason.text}</p>
+            </div>
+          ))}
+        </div>
+
+        <div className="mb-24">
+          <h2 className="text-4xl font-bold text-center text-yellow-300 mb-10">
+            Our Galaxy
+          </h2>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="bg-zinc-900 border border-yellow-400/20 rounded-3xl overflow-hidden hover:scale-[1.02] transition-transform duration-300">
+              <img
+                src="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=1200&auto=format&fit=crop"
+                alt="memory"
+                className="w-full h-72 object-cover"
+              />
+              <div className="p-5">
+                <p className="text-zinc-300">
+                  One of my favorite memories with you.
+                </p>
+              </div>
+            </div>
+
+            <div className="bg-zinc-900 border border-yellow-400/20 rounded-3xl overflow-hidden hover:scale-[1.02] transition-transform duration-300">
+              <img
+                src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=1200&auto=format&fit=crop"
+                alt="memory"
+                className="w-full h-72 object-cover"
+              />
+              <div className="p-5">
+                <p className="text-zinc-300">
+                  Replace these with your own photos together.
+                </p>
+              </div>
+            </div>
+
+            <div className="bg-zinc-900 border border-yellow-400/20 rounded-3xl overflow-hidden hover:scale-[1.02] transition-transform duration-300">
+              <img
+                src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?q=80&w=1200&auto=format&fit=crop"
+                alt="memory"
+                className="w-full h-72 object-cover"
+              />
+              <div className="p-5">
+                <p className="text-zinc-300">
+                  Add screenshots, selfies, dates, or little moments.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="text-center bg-gradient-to-b from-yellow-400/10 to-transparent border border-yellow-300/20 rounded-[40px] p-12 backdrop-blur-sm">
+          <h2 className="text-4xl md:text-5xl font-black text-yellow-300 mb-6">
+            You’re My Chosen One
+          </h2>
+
+          <p className="max-w-2xl mx-auto text-zinc-300 text-lg leading-relaxed mb-8">
+            Out of every person in every galaxy, timeline, and universe,
+            I’d still choose you every single time.
+          </p>
+
+          <button className="px-8 py-4 rounded-full bg-yellow-300 text-black font-bold hover:scale-105 transition-transform duration-300 shadow-[0_0_20px_rgba(255,215,0,0.5)]">
+            I Love You More Than The Force
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}
